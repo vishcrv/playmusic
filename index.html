@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAYSIC - Music Player</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
+</head>
+<body>
+    <div class="music-player">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h1>PLAYSIC</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                </ul>
+            </nav>
+            <div class="playlist-section">
+                <div class="create-playlist">
+                    <button id="upload-btn"><i class="fas fa-plus"></i> Upload Music</button>
+                    <input type="file" id="audio-upload" accept="audio/mp3" multiple hidden>
+                </div>
+                <div class="playlists">
+                    <h3>Your Playlists</h3>
+                    <ul id="playlist-container">
+                        <!-- Playlists will be populated dynamically -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="top-bar">
+                <h2>Home</h2>
+            </div>
+
+            <div class="content-area">
+                <div class="songs-container" id="songs-container">
+                    <!-- Songs will be populated dynamically -->
+                    <div class="upload-prompt" id="upload-prompt">
+                        <h2>Your music collection is empty</h2>
+                        <p>Upload your MP3 files to start listening</p>
+                        <button id="upload-btn-main" class="upload-btn-main">Upload Music</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Player Controls -->
+        <div class="player-bar">
+            <div class="song-info">
+                <div class="song-img" id="current-img">
+                    <img src="https://via.placeholder.com/60" alt="Song cover">
+                </div>
+                <div class="song-details">
+                    <h4 id="current-song-name">No song selected</h4>
+                    <p id="current-artist-name">Upload music to play</p>
+                </div>
+            </div>
+
+            <div class="player-controls">
+                <div class="control-buttons">
+                    <button class="control-btn" id="prev-btn"><i class="fas fa-step-backward"></i></button>
+                    <button class="control-btn play-pause" id="play-pause-btn"><i class="fas fa-play"></i></button>
+                    <button class="control-btn" id="next-btn"><i class="fas fa-step-forward"></i></button>
+                </div>
+                <div class="progress-container">
+                    <span id="current-time">0:00</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progress-bar">
+                            <div class="progress" id="progress"></div>
+                            <div class="progress-handle" id="progress-handle"></div>
+                        </div>
+                    </div>
+                    <span id="duration">0:00</span>
+                </div>
+            </div>
+
+            <div class="volume-controls">
+                <button class="volume-btn"><i class="fas fa-volume-up"></i></button>
+                <div class="volume-bar-container">
+                    <div class="volume-bar">
+                        <div class="volume-progress"></div>
+                        <div class="volume-handle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="audio-player"></audio>
+    <script src="js/app.js"></script>
+</body>
+</html> 
